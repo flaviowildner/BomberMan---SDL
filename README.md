@@ -2,4 +2,4 @@
 
 BomberMan - Desenvolvido com a biblioteca SDL 2.
 
-Obs: Trabalho final prático de Computaçao I
+Obs: Trabalho prático final de Computação I
