@@ -1,10 +1,13 @@
-#include "stdafx.h"
-#include "SDL.h"
-#include "SDL2-devel-2.0.3-VC\SDL2-2.0.3\include\SDL_image.h"
-#include "SDL2-devel-2.0.3-VC\SDL2-2.0.3\include\SDL_mixer.h"
-#include "SDL2-devel-2.0.3-VC\SDL2-2.0.3\include\SDL_ttf.h"
-#include "stdlib.h"
-#include "time.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+#include <SDL.h>
+
+
+#include <SDL_ttf.h>
+#include <SDL_mixer.h>
+#include <SDL_image.h>
 
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 640;
