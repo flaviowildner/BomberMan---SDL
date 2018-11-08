@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 
-#include <SDL_ttf.h>
-#include <SDL_mixer.h>
-#include <SDL_image.h>
+#include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_mixer.h>
+#include <SDL2/SDL_image.h>
 
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 640;
@@ -382,7 +382,7 @@ bool ChecarColisaovetorwblocosdestrutiveis(SDL_Rect *gRect, SDL_Rect RectBlocoDe
 
 
 
-int _tmain(int argc, _TCHAR* argv[])
+int main(int argc, char **argv)
 {
 	int k = 0;
 	int a = 0;
@@ -394,7 +394,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	SDL_Window* Window = NULL;
 	srand((unsigned)time(NULL));
 	if (TTF_Init() < 0) {
-		printf("%s\n", TTF_GetError);
+		printf("%s\n", TTF_GetError());
 	}
 
 	SDL_Color cor;
@@ -415,7 +415,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	TTF_Font *fonte;
 	char Score[30];
-	fonte = TTF_OpenFont("font.ttf", 26);
+	fonte = TTF_OpenFont("fonts/font.ttf", 26);
 	TTF_SetFontStyle(fonte, TTF_STYLE_BOLD);
 	char msgprincipal[15] = "MENU";
 	char msgcontrol[15] = "CONTROLS";
@@ -450,43 +450,43 @@ int _tmain(int argc, _TCHAR* argv[])
 
 
 	///////////////SURFACES
-	SDL_Surface* BlocoDestrutivel = IMG_Load("blocodestrutivel.png");
-	SDL_Surface* Personup = IMG_Load("bmanup.png");
-	SDL_Surface* Personup2 = IMG_Load("bmanup2.png");
-	SDL_Surface* Personup3 = IMG_Load("bmanup3.png");
-	SDL_Surface* Personright = IMG_Load("bmanright.png");
-	SDL_Surface* Personright2 = IMG_Load("bmanright2.png");
-	SDL_Surface* Personright3 = IMG_Load("bmanright3.png");
-	SDL_Surface* Persondown = IMG_Load("bmandown.png");
-	SDL_Surface* Persondown2 = IMG_Load("bmandown2.png");
-	SDL_Surface* Persondown3 = IMG_Load("bmandown3.png");
-	SDL_Surface* Personleft = IMG_Load("bmanleft.png");
-	SDL_Surface* Personleft2 = IMG_Load("bmanleft2.png");
-	SDL_Surface* Personleft3 = IMG_Load("bmanleft3.png");
-	SDL_Surface* Bomb1 = IMG_Load("bomb1.png");
-	SDL_Surface* Bomb2 = IMG_Load("bomb2.png");
-	SDL_Surface* Bomb3 = IMG_Load("bomb3.png");
-	SDL_Surface* Exploup = IMG_Load("exploup.png");
-	SDL_Surface* Exploright = IMG_Load("exploright.png");
-	SDL_Surface* Explomiddle = IMG_Load("explomiddle.png");
-	SDL_Surface* Explodown = IMG_Load("explodown.png");
-	SDL_Surface* Exploleft = IMG_Load("exploleft.png");
-	SDL_Surface* Bodyup = IMG_Load("bodyup.png");
-	SDL_Surface* Bodyright = IMG_Load("bodyright.png");
-	SDL_Surface* Bodydown = IMG_Load("bodydown.png");
-	SDL_Surface* Bodyleft = IMG_Load("bodyleft.png");
-	SDL_Surface* Title = IMG_Load("title.png");
-	SDL_Surface* Selecionador = IMG_Load("selecionador.png");
-	SDL_Surface* Menu = IMG_Load("menu.png");
-	SDL_Surface* Recordes = IMG_Load("highscore.png");
-	SDL_Surface* Creditos = IMG_Load("credits.png");
-	SDL_Surface* Vida = IMG_Load("vida.png");
-	SDL_Surface* Clock = IMG_Load("clock.png");
-	SDL_Surface* Youlose = IMG_Load("Youlose.png");
-	SDL_Surface* Enemy = IMG_Load("enemy.png");
-	SDL_Surface* Enemy2 = IMG_Load("enemy2.png");
-	SDL_Surface* Enemy3 = IMG_Load("enemy3.png");
-	SDL_Surface* Survive = IMG_Load("survive.png");
+	SDL_Surface* BlocoDestrutivel = IMG_Load("images/blocoDestrutivel.png");
+	SDL_Surface* Personup = IMG_Load("images/bmanup.png");
+	SDL_Surface* Personup2 = IMG_Load("images/bmanup2.png");
+	SDL_Surface* Personup3 = IMG_Load("images/bmanup3.png");
+	SDL_Surface* Personright = IMG_Load("images/bmanright.png");
+	SDL_Surface* Personright2 = IMG_Load("images/bmanright2.png");
+	SDL_Surface* Personright3 = IMG_Load("images/bmanright3.png");
+	SDL_Surface* Persondown = IMG_Load("images/bmandown.png");
+	SDL_Surface* Persondown2 = IMG_Load("images/bmandown2.png");
+	SDL_Surface* Persondown3 = IMG_Load("images/bmandown3.png");
+	SDL_Surface* Personleft = IMG_Load("images/bmanleft.png");
+	SDL_Surface* Personleft2 = IMG_Load("images/bmanleft2.png");
+	SDL_Surface* Personleft3 = IMG_Load("images/bmanleft3.png");
+	SDL_Surface* Bomb1 = IMG_Load("images/bomb1.png");
+	SDL_Surface* Bomb2 = IMG_Load("images/bomb2.png");
+	SDL_Surface* Bomb3 = IMG_Load("images/bomb3.png");
+	SDL_Surface* Exploup = IMG_Load("images/exploup.png");
+	SDL_Surface* Exploright = IMG_Load("images/exploright.png");
+	SDL_Surface* Explomiddle = IMG_Load("images/explomiddle.png");
+	SDL_Surface* Explodown = IMG_Load("images/explodown.png");
+	SDL_Surface* Exploleft = IMG_Load("images/exploleft.png");
+	SDL_Surface* Bodyup = IMG_Load("images/bodyup.png");
+	SDL_Surface* Bodyright = IMG_Load("images/bodyright.png");
+	SDL_Surface* Bodydown = IMG_Load("images/bodydown.png");
+	SDL_Surface* Bodyleft = IMG_Load("images/bodyleft.png");
+	SDL_Surface* Title = IMG_Load("images/title.png");
+	SDL_Surface* Selecionador = IMG_Load("images/selecionador.png");
+	SDL_Surface* Menu = IMG_Load("images/menu.png");
+	SDL_Surface* Recordes = IMG_Load("images/highscore.png");
+	SDL_Surface* Creditos = IMG_Load("images/credits.png");
+	SDL_Surface* Vida = IMG_Load("images/vida.png");
+	SDL_Surface* Clock = IMG_Load("images/clock.png");
+	SDL_Surface* Youlose = IMG_Load("images/Youlose.png");
+	SDL_Surface* Enemy = IMG_Load("images/enemy.png");
+	SDL_Surface* Enemy2 = IMG_Load("images/enemy2.png");
+	SDL_Surface* Enemy3 = IMG_Load("images/enemy3.png");
+	SDL_Surface* Survive = IMG_Load("images/survive.png");
 
 
 
@@ -528,52 +528,52 @@ int _tmain(int argc, _TCHAR* argv[])
 	SDL_Surface* gClock = NULL;
 	SDL_Surface* gSurvive = NULL;
 
-	SDL_Surface* Mapa = IMG_Load("mapa.png");
+	SDL_Surface* Mapa = IMG_Load("images/mapa.png");
 	SDL_Surface* gMapa = NULL;
 
 	
 
 
 	////////////////CONVERTER IMAGENS
-	gBlocoDestrutivel = SDL_ConvertSurface(BlocoDestrutivel, Tela->format, NULL);
-	gPersonup = SDL_ConvertSurface(Personup, Tela->format, NULL);
-	gPersonup2 = SDL_ConvertSurface(Personup2, Tela->format, NULL);
-	gPersonup3 = SDL_ConvertSurface(Personup3, Tela->format, NULL);
-	gPersonright = SDL_ConvertSurface(Personright, Tela->format, NULL);
-	gPersonright2 = SDL_ConvertSurface(Personright2, Tela->format, NULL);
-	gPersonright3 = SDL_ConvertSurface(Personright3, Tela->format, NULL);
-	gPersondown = SDL_ConvertSurface(Persondown, Tela->format, NULL);
-	gPersondown2 = SDL_ConvertSurface(Persondown2, Tela->format, NULL);
-	gPersondown3 = SDL_ConvertSurface(Persondown3, Tela->format, NULL);
-	gPersonleft = SDL_ConvertSurface(Personleft, Tela->format, NULL);
-	gPersonleft2 = SDL_ConvertSurface(Personleft2, Tela->format, NULL);
-	gPersonleft3 = SDL_ConvertSurface(Personleft3, Tela->format, NULL);
-	gBomb1 = SDL_ConvertSurface(Bomb1, Tela->format, NULL);
-	gBomb2 = SDL_ConvertSurface(Bomb2, Tela->format, NULL);
-	gBomb3 = SDL_ConvertSurface(Bomb3, Tela->format, NULL);
-	gExploup = SDL_ConvertSurface(Exploup, Tela->format, NULL);
-	gExploright = SDL_ConvertSurface(Exploright, Tela->format, NULL);
-	gExplomiddle = SDL_ConvertSurface(Explomiddle, Tela->format, NULL);
-	gExplodown = SDL_ConvertSurface(Explodown, Tela->format, NULL);
-	gExploleft = SDL_ConvertSurface(Exploleft, Tela->format, NULL);
-	gBodyup = SDL_ConvertSurface(Bodyup, Tela->format, NULL);
-	gBodyright = SDL_ConvertSurface(Bodyright, Tela->format, NULL);
-	gBodydown = SDL_ConvertSurface(Bodydown, Tela->format, NULL);
-	gBodyleft = SDL_ConvertSurface(Bodyleft, Tela->format, NULL);
-	gMapa = SDL_ConvertSurface(Mapa, Tela->format, NULL);
-	gTitle = SDL_ConvertSurface(Title, Tela->format, NULL);
-	gSelecionador = SDL_ConvertSurface(Selecionador, Tela->format, NULL);
-	gMenu = SDL_ConvertSurface(Menu, Tela->format, NULL);
-	gYoulose = SDL_ConvertSurface(Youlose, Tela->format, NULL);
-	gEnemy = SDL_ConvertSurface(Enemy, Tela->format, NULL);
-	gEnemy2 = SDL_ConvertSurface(Enemy2, Tela->format, NULL);
-	gEnemy3 = SDL_ConvertSurface(Enemy3, Tela->format, NULL);
-	gSurvive = SDL_ConvertSurface(Survive, Tela->format, NULL);
+	gBlocoDestrutivel = SDL_ConvertSurface(BlocoDestrutivel, Tela->format, 0);
+	gPersonup = SDL_ConvertSurface(Personup, Tela->format, 0);
+	gPersonup2 = SDL_ConvertSurface(Personup2, Tela->format, 0);
+	gPersonup3 = SDL_ConvertSurface(Personup3, Tela->format, 0);
+	gPersonright = SDL_ConvertSurface(Personright, Tela->format, 0);
+	gPersonright2 = SDL_ConvertSurface(Personright2, Tela->format, 0);
+	gPersonright3 = SDL_ConvertSurface(Personright3, Tela->format, 0);
+	gPersondown = SDL_ConvertSurface(Persondown, Tela->format, 0);
+	gPersondown2 = SDL_ConvertSurface(Persondown2, Tela->format, 0);
+	gPersondown3 = SDL_ConvertSurface(Persondown3, Tela->format, 0);
+	gPersonleft = SDL_ConvertSurface(Personleft, Tela->format, 0);
+	gPersonleft2 = SDL_ConvertSurface(Personleft2, Tela->format, 0);
+	gPersonleft3 = SDL_ConvertSurface(Personleft3, Tela->format, 0);
+	gBomb1 = SDL_ConvertSurface(Bomb1, Tela->format, 0);
+	gBomb2 = SDL_ConvertSurface(Bomb2, Tela->format, 0);
+	gBomb3 = SDL_ConvertSurface(Bomb3, Tela->format, 0);
+	gExploup = SDL_ConvertSurface(Exploup, Tela->format, 0);
+	gExploright = SDL_ConvertSurface(Exploright, Tela->format, 0);
+	gExplomiddle = SDL_ConvertSurface(Explomiddle, Tela->format, 0);
+	gExplodown = SDL_ConvertSurface(Explodown, Tela->format, 0);
+	gExploleft = SDL_ConvertSurface(Exploleft, Tela->format, 0);
+	gBodyup = SDL_ConvertSurface(Bodyup, Tela->format, 0);
+	gBodyright = SDL_ConvertSurface(Bodyright, Tela->format, 0);
+	gBodydown = SDL_ConvertSurface(Bodydown, Tela->format, 0);
+	gBodyleft = SDL_ConvertSurface(Bodyleft, Tela->format, 0);
+	gMapa = SDL_ConvertSurface(Mapa, Tela->format, 0);
+	gTitle = SDL_ConvertSurface(Title, Tela->format, 0);
+	gSelecionador = SDL_ConvertSurface(Selecionador, Tela->format, 0);
+	gMenu = SDL_ConvertSurface(Menu, Tela->format, 0);
+	gYoulose = SDL_ConvertSurface(Youlose, Tela->format, 0);
+	gEnemy = SDL_ConvertSurface(Enemy, Tela->format, 0);
+	gEnemy2 = SDL_ConvertSurface(Enemy2, Tela->format, 0);
+	gEnemy3 = SDL_ConvertSurface(Enemy3, Tela->format, 0);
+	gSurvive = SDL_ConvertSurface(Survive, Tela->format, 0);
 
-	gCreditos = SDL_ConvertSurface(Creditos, Tela->format, NULL);
-	gVida = SDL_ConvertSurface(Vida, Tela->format, NULL);
-	gRecordes = SDL_ConvertSurface(Recordes, Tela->format, NULL);
-	gClock = SDL_ConvertSurface(Clock, Tela->format, NULL);
+	gCreditos = SDL_ConvertSurface(Creditos, Tela->format, 0);
+	gVida = SDL_ConvertSurface(Vida, Tela->format, 0);
+	gRecordes = SDL_ConvertSurface(Recordes, Tela->format, 0);
+	gClock = SDL_ConvertSurface(Clock, Tela->format, 0);
 
 
 	///////////////EXCLUIR IMAGENS ANTIGAS
@@ -744,7 +744,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	int EnemyFrameTime = 0;
 	bool keystate = false;
 	bool quit = false;
-	const Uint8* state = SDL_GetKeyboardState(NULL);
+	const Uint8* state = SDL_GetKeyboardState(0);
 	SDL_Event e;
 	GameRun = 0;
 	///////////////////////////////////////////////////JOGO
@@ -784,23 +784,23 @@ int _tmain(int argc, _TCHAR* argv[])
 		{
 			if (control == 0)
 			{
-				SDL_BlitSurface(gTitle, NULL, Tela, NULL);
+				SDL_BlitSurface(gTitle, NULL, Tela, 0);
 				SDL_BlitSurface(MenuPrincipal, NULL, Tela, &RectPoints);
 				SDL_BlitSurface(gSelecionador, NULL, Tela, &RectSelect);
 			}
 			else if (control == 1)
 			{
-				SDL_BlitSurface(gMenu, NULL, Tela, NULL);
+				SDL_BlitSurface(gMenu, NULL, Tela, 0);
 				SDL_BlitSurface(Controls, NULL, Tela, &RectPoints);
 			}
 			else if (control == 2)
 			{
-				SDL_BlitSurface(gCreditos, NULL, Tela, NULL);
+				SDL_BlitSurface(gCreditos, NULL, Tela, 0);
 				SDL_BlitSurface(Records, NULL, Tela, &RectPoints);
 			}
 			else if (control == 3)
 			{
-				SDL_BlitSurface(gRecordes, NULL, Tela, NULL);
+				SDL_BlitSurface(gRecordes, NULL, Tela, 0);
 				SDL_BlitSurface(Credits, NULL, Tela, &RectPoints);
 			}		
 
@@ -1093,10 +1093,10 @@ int _tmain(int argc, _TCHAR* argv[])
 
 			SDL_BlitSurface(pontos, NULL, Tela, &RectPoints);
 			SDL_BlitSurface(GameTime, NULL, Tela, &RectTimer);
-			sprintf_s(Score, "Score: %d", score);
+			sprintf(Score, "Score: %ld", score);
 			SDL_FreeSurface(pontos);
 			
-			SDL_BlitSurface(gMapa, NULL, Tela, NULL);
+			SDL_BlitSurface(gMapa, NULL, Tela, 0);
 			
 			for (k = 0; k < nBlocos; k++)
 			{
@@ -1112,8 +1112,8 @@ int _tmain(int argc, _TCHAR* argv[])
 			int minuto = 0;
 			hora = Time / 60;
 			minuto = Time % 60;
-			sprintf_s(Score, "Score: %d", score);
-			sprintf_s(GameTimer, "Time: %d:%d", hora, minuto);
+			sprintf(Score, "Score: %ld", score);
+			sprintf(GameTimer, "Time: %d:%d", hora, minuto);
 			score++;
 			Time++;
 			PointsTimer = ticks + 1000;
@@ -1581,18 +1581,17 @@ int _tmain(int argc, _TCHAR* argv[])
 		////////////////////////////////////////////////////////////////////
 		if (GameRun == 2)
 		{
-			SDL_BlitSurface(gYoulose, NULL, Tela, NULL);
+			SDL_BlitSurface(gYoulose, NULL, Tela, 0);
 			cor.r = 255;
 			cor.g = 0;
 			cor.b = 255;
-			fonte = TTF_OpenFont("font.ttf", 60);
-			sprintf_s(Score, "SUA PONTUACAO %d", score);
+			fonte = TTF_OpenFont("fonts/font.ttf", 60);
+			sprintf(Score, "SUA PONTUACAO %ld", score);
 			Pontuacao = TTF_RenderText_Blended(fonte, Score, cor);
 			SDL_BlitSurface(Pontuacao, NULL, Tela, &RectPontuacao);
-			SDL_FreeSurface(pontos);
 			SDL_UpdateWindowSurface(Window);
 			SDL_Delay(3000);
-			fonte = TTF_OpenFont("font.ttf", 26);
+			fonte = TTF_OpenFont("fonts/font.ttf", 26);
 			cor.r = 0;
 			cor.g = 0;
 			cor.b = 0;
@@ -1630,7 +1629,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		}
 		if (GameRun == 5 && surv == 1)
 		{
-			SDL_BlitSurface(gSurvive, NULL, Tela, NULL);
+			SDL_BlitSurface(gSurvive, NULL, Tela, 0);
 			SDL_UpdateWindowSurface(Window);
 			SDL_Delay(2000);
 			surv = 0;
