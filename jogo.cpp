@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include <SDL2/SDL.h>
+#include <SDL.h>
 
 
-#include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_mixer.h>
-#include <SDL2/SDL_image.h>
+#include <SDL_ttf.h>
+#include <SDL_mixer.h>
+#include <SDL_image.h>
 
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 640;
@@ -381,8 +381,7 @@ bool ChecarColisaovetorwblocosdestrutiveis(SDL_Rect *gRect, SDL_Rect RectBlocoDe
 }
 
 
-
-int main(int argc, char **argv)
+int main( int argc, char* args[] )
 {
 	int k = 0;
 	int a = 0;
